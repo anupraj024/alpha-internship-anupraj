@@ -73,3 +73,56 @@ XGBoost Model
       |
       v
 Prediction + Top Risk Factors
+
+## Checkpoint 1: Baseline Credit-Risk Model
+
+Checkpoint 1 establishes a reproducible tabular ML baseline before adding
+explainability, an API, or a frontend. It includes:
+
+- CSV loading with schema validation
+- Duplicate and target validation
+- Exploratory analysis of class balance and numeric relationships
+- Leakage-safe feature preparation
+- A stratified 80/20 train/test split with `random_state=42`
+- A balanced logistic-regression baseline with one-hot encoding and scaling
+- ROC AUC, Gini, accuracy, precision, recall, F1, and a confusion matrix
+
+The `application_id` column is intentionally excluded from model features
+because it is an identifier rather than a generalizable applicant attribute.
+All learned transformations are fitted within the scikit-learn pipeline using
+the training split only.
+
+### Setup
+
+From the repository root, create or activate a virtual environment and install
+the dependencies:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+### Run Checkpoint 1
+
+Train and evaluate the baseline on the included raw data:
+
+```powershell
+python -m src.models.train_model
+```
+
+The command writes `data/processed/checkpoint_1_metrics.json` and
+`data/processed/default_distribution.png`. It prints ROC AUC, Gini, accuracy,
+and F1 for the held-out test set. The dataset is included for development;
+performance targets should be confirmed against an approved validation set
+before making production claims.
+
+Run the focused tests with:
+
+```powershell
+python -m pytest tests/test_checkpoint_1.py -q
+```
+
+Open `notebooks/checkpoint_1.ipynb` for the walkthrough covering objective,
+data inspection, cleaning, EDA, feature preparation, model preparation,
+evaluation, and conclusion.
