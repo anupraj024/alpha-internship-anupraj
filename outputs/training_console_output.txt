@@ -1,0 +1,37 @@
+BUILD-TIME EXECUTION LOG
+\nINTELLIGENT DOCUMENT CLASSIFICATION
+=======================================
+Documents: 100 | Train: 75 | Test: 25
+Categories: Education, Finance, Health, Sports, Technology
+\nEvaluation metrics (weighted):
+Accuracy : 0.6800
+Precision: 0.6900
+Recall   : 0.6800
+F1-score : 0.6824
+\nDetailed classification report:
+              precision    recall  f1-score   support
+
+   Education       0.50      0.60      0.55         5
+     Finance       0.60      0.60      0.60         5
+      Health       0.80      0.80      0.80         5
+      Sports       0.75      0.60      0.67         5
+  Technology       0.80      0.80      0.80         5
+
+    accuracy                           0.68        25
+   macro avg       0.69      0.68      0.68        25
+weighted avg       0.69      0.68      0.68        25
+
+Saved model: /mnt/data/Intelligent_Document_Classification_System/outputs/document_classifier.joblib
+Saved report: /mnt/data/Intelligent_Document_Classification_System/outputs/evaluation_report.json
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

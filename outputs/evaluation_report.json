@@ -1,0 +1,114 @@
+{
+  "project": "Intelligent Document Classification System",
+  "algorithm": "Multinomial Naive Bayes",
+  "feature_extraction": "TF-IDF (unigrams and bigrams)",
+  "dataset": "/mnt/data/Intelligent_Document_Classification_System/data/documents.csv",
+  "total_documents": 100,
+  "training_documents": 75,
+  "testing_documents": 25,
+  "categories": [
+    "Education",
+    "Finance",
+    "Health",
+    "Sports",
+    "Technology"
+  ],
+  "metrics": {
+    "accuracy": 0.68,
+    "weighted_precision": 0.69,
+    "weighted_recall": 0.68,
+    "weighted_f1_score": 0.6824
+  },
+  "classification_report": {
+    "Education": {
+      "precision": 0.5,
+      "recall": 0.6,
+      "f1-score": 0.5454545454545454,
+      "support": 5.0
+    },
+    "Finance": {
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1-score": 0.6,
+      "support": 5.0
+    },
+    "Health": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1-score": 0.8,
+      "support": 5.0
+    },
+    "Sports": {
+      "precision": 0.75,
+      "recall": 0.6,
+      "f1-score": 0.6666666666666666,
+      "support": 5.0
+    },
+    "Technology": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1-score": 0.8,
+      "support": 5.0
+    },
+    "accuracy": 0.68,
+    "macro avg": {
+      "precision": 0.6900000000000001,
+      "recall": 0.68,
+      "f1-score": 0.6824242424242424,
+      "support": 25.0
+    },
+    "weighted avg": {
+      "precision": 0.69,
+      "recall": 0.68,
+      "f1-score": 0.6824242424242424,
+      "support": 25.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Education",
+      "Finance",
+      "Health",
+      "Sports",
+      "Technology"
+    ],
+    "matrix": [
+      [
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        4
+      ]
+    ]
+  },
+  "note": "Metrics are from a held-out split of the included small illustrative dataset."
+}
